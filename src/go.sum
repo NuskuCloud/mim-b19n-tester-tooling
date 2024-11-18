@@ -1,6 +1,10 @@
+github.com/alecthomas/kong v1.4.0 h1:UL7tzGMnnY0YRMMvJyITIRX1EpO6RbBRZDNcCevy3HA=
+github.com/alecthomas/kong v1.4.0/go.mod h1:p2vqieVMeTAnaC83txKtXe8FLke2X07aruPWXyMPQrU=
 github.com/goburrow/serial v0.1.0 h1:v2T1SQa/dlUqQiYIT8+Cu7YolfqAi3K96UmhwYyuSrA=
 github.com/goburrow/serial v0.1.0/go.mod h1:sAiqG0nRVswsm1C97xsttiYCzSLBmUZ/VSlVLZJ8haA=
 github.com/nuskucloud/samsung_mimb19n v0.5.0 h1:C1HxovWOs0Gp2cXf80Xk2is+7huCz/Nzzd4pDhZWhIY=
 github.com/nuskucloud/samsung_mimb19n v0.5.0/go.mod h1:3l/GC2fbNoGETZVtoh80qMmGhFXuSH1kKu8fMFDML7Q=
+github.com/nuskucloud/samsung_mimb19n v0.6.0 h1:YMgfna9UueEA9ygLXgfgEvAACmKc7XqTyW8dvRVxy/8=
+github.com/nuskucloud/samsung_mimb19n v0.6.0/go.mod h1:3l/GC2fbNoGETZVtoh80qMmGhFXuSH1kKu8fMFDML7Q=
 github.com/simonvetter/modbus v1.6.3 h1:kDzwVfIPczsM4Iz09il/Dij/bqlT4XiJVa0GYaOVA9w=
 github.com/simonvetter/modbus v1.6.3/go.mod h1:hh90ZaTaPLcK2REj6/fpTbiV0J6S7GWmd8q+GVRObPw=

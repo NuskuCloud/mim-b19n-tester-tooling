@@ -49,6 +49,14 @@ func main() {
 		return
 	}
 
+	// Set it to heating mode
+	err = heatpumpModbus.ModbusClient.WriteRegister(53, 4)
+	if err != nil {
+		fmt.Println("Could not set register 53 to value 4 (heating mode")
+		panic(err)
+		return
+	}
+
 	err = heatpumpModbus.SetInsideTargetTemperature(targetTemperatureUint16)
 	if err != nil {
 		fmt.Println("Error setting target temperature")
