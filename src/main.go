@@ -6,6 +6,7 @@ import (
 	"github.com/nuskucloud/samsung_mimb19n"
 	"math"
 	"os"
+	"time"
 )
 
 func main() {
@@ -21,14 +22,48 @@ func main() {
 	targetTemperatureUint16, _ := float64PtrToUint16(targetTemperature)
 	flowTemperatureUint16, _ := float64PtrToUint16(flowTemperature)
 
-	heatpumpModbus := samsung_mimb19n.NewClient("COM6", 500)
+	heatpumpModbus := samsung_mimb19n.NewClient("COM6", 500*time.Millisecond)
 
-	heatpumpModbus.ModbusClient.SetUnitId(1)
+	err := heatpumpModbus.ModbusClient.SetUnitId(1)
+	if err != nil {
+		fmt.Println("Error setting unit id")
+		return
+	}
 
-	heatpumpModbus.CentralHeatingEnable(true)
-	heatpumpModbus.SetInsideTargetTemperature(targetTemperatureUint16)
-	heatpumpModbus.SetFlowTemperature(flowTemperatureUint16)
+	err = heatpumpModbus.ModbusClient.Open()
+	if err != nil {
+		// error out if we failed to connect/open the device
+		// note: multiple Open() attempts can be made on the same client until
+		// the connection succeeds (i.e. err == nil), calling the constructor again
+		// is unnecessary.
+		// likewise, a client can be opened and closed as many times as needed.
+		fmt.Println("Error opening modbus client")
+		panic(err)
+		return
+	}
 
+	err = heatpumpModbus.CentralHeatingEnable(true)
+	if err != nil {
+		fmt.Println("Error enabling central heating")
+		panic(err)
+		return
+	}
+
+	err = heatpumpModbus.SetInsideTargetTemperature(targetTemperatureUint16)
+	if err != nil {
+		fmt.Println("Error setting target temperature")
+		panic(err)
+		return
+	}
+
+	err = heatpumpModbus.SetFlowTemperature(flowTemperatureUint16)
+	if err != nil {
+		fmt.Println("Error setting flow temperature")
+		panic(err)
+		return
+	}
+
+	fmt.Println("Successfully set temperatures I think, with the following values:")
 	fmt.Printf("Flow Temperature: %.2f\n", *flowTemperature)
 	fmt.Printf("Target Temperature: %.2f\n", *targetTemperature)
 
