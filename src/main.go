@@ -82,7 +82,7 @@ func main() {
 		panic(err)
 		return
 	}
-	fmt.Println(fmt.Sprintf("modbus indoor temperature: %g", temperature))
+	fmt.Println("modbus indoor temperature:" + strconv.Itoa(int(temperature)))
 
 	temperature, err = heatpumpModbus.ReadOutdoorTemperature()
 	if err != nil {
@@ -90,23 +90,23 @@ func main() {
 		panic(err)
 		return
 	}
-	fmt.Println(fmt.Sprintf("modbus outdoor temperature: %g", temperature))
+	fmt.Println("modbus outdoor temperature:" + strconv.Itoa(int(temperature)))
 
-	temperature, err = heatpumpModbus.ReadFlowTemperature()
-	if err != nil {
-		fmt.Println("Error reading flow temperature")
-		panic(err)
-		return
-	}
-	fmt.Println(fmt.Sprintf("modbus flow temperature: %g", temperature))
-
-	temperature, err = heatpumpModbus.ReadReturnTemperature()
-	if err != nil {
-		fmt.Println("Error reading return temperature")
-		panic(err)
-		return
-	}
-	fmt.Println(fmt.Sprintf("modbus return temperature: %g", temperature))
+	//temperature, err = heatpumpModbus.ReadFlowTemperature()
+	//if err != nil {
+	//	fmt.Println("Error reading flow temperature")
+	//	panic(err)
+	//	return
+	//}
+	//fmt.Println(fmt.Sprintf("modbus flow temperature: %g", temperature))
+	//
+	//temperature, err = heatpumpModbus.ReadReturnTemperature()
+	//if err != nil {
+	//	fmt.Println("Error reading return temperature")
+	//	panic(err)
+	//	return
+	//}
+	//fmt.Println(fmt.Sprintf("modbus return temperature: %g", temperature))
 
 }
 
