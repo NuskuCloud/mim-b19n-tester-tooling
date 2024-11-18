@@ -8,8 +8,9 @@ fi
 package_split=(${package//\// })
 package_name=${package_split[-1]}
 
+platforms=("windows/amd64" )
 #platforms=("windows/amd64" "windows/386" "darwin/amd64" "linux/arm")
-platforms=("linux/arm")
+#platforms=("linux/arm")
 
 rm -rf ../dist
 
@@ -20,8 +21,9 @@ do
 	GOARCH=${platform_split[1]}
 	output_name='mimb19n-tester-'$GOOS'-'$GOARCH
 
-
 	env GOOS=$GOOS GOARCH=$GOARCH go build -o ../dist/$output_name $package
+
+		output_name+='.exe'
 
 	mkdir -p ../dist
 

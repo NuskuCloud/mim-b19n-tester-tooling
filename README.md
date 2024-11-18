@@ -3,7 +3,7 @@
 ## Usage
 
 ```shell
-./mimb19n-tester-linux-arm -flow_temperature=30 -target_temperature=22.0
+./mimb19n-tester-linux-arm.exe -flow_temperature=30 -target_temperature=22.0
 ```
 
 ## Building
