@@ -75,6 +75,38 @@ func main() {
 	fmt.Printf("Flow Temperature: %.2f\n", *flowTemperature)
 	fmt.Printf("Target Temperature: %.2f\n", *targetTemperature)
 
+	temperature, err := heatpumpModbus.ReadIndoorTemperature()
+	if err != nil {
+		fmt.Println("Error reading indoor temperature")
+		panic(err)
+		return
+	}
+	fmt.Println(fmt.Sprintf("modbus indoor temperature: %g", temperature))
+
+	temperature, err = heatpumpModbus.ReadOutdoorTemperature()
+	if err != nil {
+		fmt.Println("Error reading outdoor temperature")
+		panic(err)
+		return
+	}
+	fmt.Println(fmt.Sprintf("modbus outdoor temperature: %g", temperature))
+
+	temperature, err = heatpumpModbus.ReadFlowTemperature()
+	if err != nil {
+		fmt.Println("Error reading flow temperature")
+		panic(err)
+		return
+	}
+	fmt.Println(fmt.Sprintf("modbus flow temperature: %g", temperature))
+
+	temperature, err = heatpumpModbus.ReadReturnTemperature()
+	if err != nil {
+		fmt.Println("Error reading return temperature")
+		panic(err)
+		return
+	}
+	fmt.Println(fmt.Sprintf("modbus return temperature: %g", temperature))
+
 }
 
 func float64PtrToUint16(ptr *float64) (uint16, error) {
