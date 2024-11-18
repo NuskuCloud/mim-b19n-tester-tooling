@@ -43,6 +43,12 @@ func main() {
 		return
 	}
 
+	heatpumpModbus.ModbusClient.WriteRegisters(6000, []uint16{HexToUint16("8238"), HexToUint16("8204")})
+	if err != nil {
+		fmt.Println("Error enabling hidden registers")
+		panic(err)
+	}
+
 	err = heatpumpModbus.CentralHeatingEnable(true)
 	if err != nil {
 		fmt.Println("Error enabling central heating")
@@ -82,7 +88,8 @@ func main() {
 		panic(err)
 		return
 	}
-	fmt.Println("modbus indoor temperature:" + strconv.Itoa(int(temperature)))
+	fmt.Println("modbus indoor temperature:")
+	fmt.Println(temperature)
 
 	temperature, err = heatpumpModbus.ReadOutdoorTemperature()
 	if err != nil {
@@ -90,7 +97,8 @@ func main() {
 		panic(err)
 		return
 	}
-	fmt.Println("modbus outdoor temperature:" + strconv.Itoa(int(temperature)))
+	fmt.Println("modbus outdoor temperature:")
+	fmt.Println(temperature)
 
 	//temperature, err = heatpumpModbus.ReadFlowTemperature()
 	//if err != nil {
