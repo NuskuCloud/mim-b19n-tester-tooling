@@ -6,6 +6,7 @@ import (
 	"github.com/nuskucloud/samsung_mimb19n"
 	"math"
 	"os"
+	"strconv"
 	"time"
 )
 
@@ -120,4 +121,13 @@ func float64PtrToUint16(ptr *float64) (uint16, error) {
 	}
 
 	return uint16(*ptr), nil
+}
+
+func HexToUint16(hexStr string) uint16 {
+	// Convert the hex string to a decimal integer (base 16)
+	value, err := strconv.ParseUint(hexStr, 16, 16)
+	if err != nil {
+		panic(err)
+	}
+	return uint16(value)
 }

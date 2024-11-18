@@ -8,5 +8,7 @@ github.com/nuskucloud/samsung_mimb19n v0.6.0 h1:YMgfna9UueEA9ygLXgfgEvAACmKc7XqT
 github.com/nuskucloud/samsung_mimb19n v0.6.0/go.mod h1:3l/GC2fbNoGETZVtoh80qMmGhFXuSH1kKu8fMFDML7Q=
 github.com/nuskucloud/samsung_mimb19n v0.7.0 h1:uzcjgqWJ9MLDJLSfTwaHl5QPnBJpzjtphsIpZl6B2rE=
 github.com/nuskucloud/samsung_mimb19n v0.7.0/go.mod h1:3l/GC2fbNoGETZVtoh80qMmGhFXuSH1kKu8fMFDML7Q=
+github.com/nuskucloud/samsung_mimb19n v1.0.0 h1:D3X8VKzUpfgsaylfKE+8xPYG/tV14Cb1enNb8KQWStU=
+github.com/nuskucloud/samsung_mimb19n v1.0.0/go.mod h1:3l/GC2fbNoGETZVtoh80qMmGhFXuSH1kKu8fMFDML7Q=
 github.com/simonvetter/modbus v1.6.3 h1:kDzwVfIPczsM4Iz09il/Dij/bqlT4XiJVa0GYaOVA9w=
 github.com/simonvetter/modbus v1.6.3/go.mod h1:hh90ZaTaPLcK2REj6/fpTbiV0J6S7GWmd8q+GVRObPw=
